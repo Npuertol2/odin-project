@@ -4,6 +4,11 @@ Part 1 goes over:
  2. variables, 
  3. and numbers.
 
+## JS Functions learned:
+1. console.log() -- print statement in browser console
+2. let / var keyword -- assign variables 
+3. alert() -- send alert banner with statement to webpage
+
 ## Running JS Code
 Can be done directly through HTML or an external script to a .js file.
 
@@ -46,12 +51,12 @@ let user = 'John',
   message = 'Hello';
 ````
 
-### **var** vs **let**
+#### **var** vs **let**
 - var keyword is *almost* the same as let
 - "old-school" way
 - will be discussed later
 
-### JS Variables are mutable + can be copied
+#### JS Variables are mutable + can be copied
 - A variable can be changed as many times as we want
 ````
 let message;
@@ -77,7 +82,7 @@ alert(hello); // Hello world!
 alert(message); // Hello world!
 ````
 
-## Variable Naming
+### Variable Naming
 limitations on var names:
 - name **MUST** contain only letters, digits, or symbols `$` and `$`.
 - first character **must not be a digit**.
@@ -86,11 +91,11 @@ limitations on var names:
 - reserved names (let, class, return, function, etc.). list [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#keywords)
 - make sure to declare variable first, then assign value
 
-## Constants
+### Constants
 - constant / unchanged / immutable variable use `const` isntead of `let`
 `const myBirthday = '18.04.1982';`
 
-### Uppercase constants
+#### Uppercase constants
 - common practice to use constants as aliases for **difficult-to-remember** values known prior to execution
 
 - such constants are made using capital letters and underscores
