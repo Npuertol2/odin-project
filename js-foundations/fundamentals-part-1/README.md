@@ -20,6 +20,7 @@ Can be done directly through HTML or an external script to a .js file.
 ## Variables
 - named storage for data
 - use **let** keyword to create variable
+- **NOTE:** variable should only be declared once. Repeated declaration of same variable is an error.
 
 ### Different Types of Variable Declaration
 ```` 
@@ -45,3 +46,41 @@ let user = 'John',
   message = 'Hello';
 ````
 
+### **var** vs **let**
+- var keyword is *almost* the same as let
+- "old-school" way
+- will be discussed later
+
+### JS Variables are mutable + can be copied
+- A variable can be changed as many times as we want
+````
+let message;
+
+message = 'Hello!';
+
+message = 'World!'; // value changed
+
+alert(message);
+````
+- A variable can be assigned to another to copy one's data
+
+````
+let hello = 'Hello world!';
+
+let message;
+
+// copy 'Hello world' from hello into message
+message = hello;
+
+// now two variables hold the same data
+alert(hello); // Hello world!
+alert(message); // Hello world!
+````
+
+## Variable Naming
+limitations on var names:
+- name **MUST** contain only letters, digits, or symbols `$` and `$`.
+- first character **must not be a digit**.
+- Case matters (apple != APPLE)
+- Non-Latin letters are allowed, but not recommended
+- reserved names (let, class, return, function, etc.). list [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#keywords)
