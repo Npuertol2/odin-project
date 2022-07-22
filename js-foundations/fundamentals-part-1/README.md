@@ -1,6 +1,6 @@
 # Fundamentals Part 1
 Part 1 goes over:
- 1. runing JS code, 
+ 1. running JS code, 
  2. variables, 
  3. and numbers.
 
@@ -100,3 +100,45 @@ limitations on var names:
 
 - such constants are made using capital letters and underscores
 - examples include constants for colors and their hexadecimal values
+
+## Numbers
+
+### JS Arithmetic Operators
+- Addition (+)
+- Subtraction (-)
+- Multiplication (*)
+- Exponentiation (**)
+- Division (/)
+- Modulus (%)
+- Increment (++)
+- Decrement (--)
+
+### Comparison Operators
+All of these return true/false which can be used in functions
+1. Strict Equality (===) 
+2. Strict Non-equality (!==)
+3. Less Than (<)
+4. Greater Than (>)
+5. Less than or equal to (<=)
+6. Greater than or equal to (>=)
+
+### Terms: "unary", "binary", "operand"
+- **unary:** operator with one operand
+- **binary:** operator with two operands
+- **operand:** numbers / things that operators are applied to
+
+### String Concatenation with binary +
+- Using + with two strings concatenates or combines them
+````
+let s = "my" + "string";
+alert(s); // mystring
+````
+
+### Postfix and Prefix Operators
+- If result of increment/decrement is not used, either form can be used
+- If we want to increase value and **immediately** use result, use **prefix form**
+- If we want to increment value but use **previous value**, use **post fix form**
+
+## Other Things Learned
+- you **cannot declare and assign a value to a variable and read its value in the same line**
+
