@@ -84,3 +84,14 @@ limitations on var names:
 - Case matters (apple != APPLE)
 - Non-Latin letters are allowed, but not recommended
 - reserved names (let, class, return, function, etc.). list [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#keywords)
+- make sure to declare variable first, then assign value
+
+## Constants
+- constant / unchanged / immutable variable use `const` isntead of `let`
+`const myBirthday = '18.04.1982';`
+
+### Uppercase constants
+- common practice to use constants as aliases for **difficult-to-remember** values known prior to execution
+
+- such constants are made using capital letters and underscores
+- examples include constants for colors and their hexadecimal values
