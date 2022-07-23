@@ -145,15 +145,41 @@ alert(s); // mystring
 ## Knowledge Check
  
 - Name the three ways to declare a variable
+let, const, and var
 - Which of the three variable declarations should you avoid -and why?
+var, while it behaves similarly to let, there are some differences
 - What rules should you follow when naming variables?
+1. relevant name (not single letter a , b , or c unless you know what you're doing)
+2. human readable, camelCase is good
 - What should you look out for when using the + operator - with numbers and strings?
+Given **order of strings / numbers**, this will end up concatenating and calculating in certain ways. For example:
+````
+alert('1' + 2); // returns 12
+alert(2 + 2 + '1'); // returns 41 due to order
+alert('1' + 2 + 2); // returns 122 and not 14 due to string first
+````
 - How does the % operator work?
+Modulo, works like division operator, but instead of returning the quotient, it returns the remainder.
 - Explain the difference between == and ===.
+== looks at value while === is more specific and looks at type. For example, when using `new` keyword to define **number objects**, these **are not** the **same as number values** defined using `let` keyword.
+````
+let x = 123;
+let y = new Number(123);
+
+x === y; // returns false
+```` 
 - When would you receive a NaN result?
+NaN means **Not a Number**. It is returned when doing arithmetic with a *non-numeric string**.
+`let x = 100 / "Apple"; // returns NaN` 
 - How do you increment and decrement a number?
+using ++ and --
 - Explain the difference between prefixing and post-fixing increment/decrement operators.
+depending on the purpose, they are used in different circumstances. if assigning a variable a value being incremented/decremented, ++prefix assigns the **new value** while postfix++ assigns the **old value** 
 - What is operator precedence and how is it handled in JS?
+sort of like PEMDAS but unary plus and negation are highest priority and assignment is lowest priority.
 - How do you access developer tools and the console?
+inspect element / F12
 - How do you log information to the console?
+console.log()
 - What does unary plus operator do to string representations of integers?
+will convert the string representation integer --> integer form
