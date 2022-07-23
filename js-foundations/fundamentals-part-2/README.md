@@ -51,7 +51,10 @@ console.log(bigmouth);
 
 ## Concatenating strings
 - Concatenate = join together
-- done by using **template literal**
+
+done by using:
+1. **template literal**
+2. **"+" sign**
 ### **template literal:** 
 - looks like a normal string but it uses backtick characters (`)
 - can insert variables by wrapping them inside **${}** characters
@@ -84,7 +87,61 @@ button.addEventListener('click', greet);
 - once inputted, alert() send message, which uses the **template literal** format to insert/concatenate the greeting + name variable
 
 ### Concatenation using "+"
+- another way to concatenate
+- template literals are recommended (more readable / clear)
 
+````
+const greeting = "Hello"; // "+" Method
+const name = "Chris";
+console.log(greeting + ", " + name); // "Hello, Chris"
+
+const greeting = "Hello"; // Template Literal Method
+const name = "Chris";
+console.log(`${greeting}, ${name}`); // "Hello, Chris"
+````
 ## Other String Features 
 
 ### Numbers vs. strings
+- when converting number --> string using template literal, browser will convert number to string before concatenation
+- useful for converting user inputs from form's text fields --> numbers to make useful in other functions
+
+- String --> Number: Use **Number()** function. 
+````
+const myString = '123';
+const myNum = Number(myString);
+console.log(typeof myNum); // Number() converts myString from '123' to 123, stores in myNum
+````
+- Number --> String: Use **toString()** function
+````
+const myNum2 = 123;
+const myString2 = myNum2.toString();
+console.log(typeof myString2); // toString() convert myNum2 from 123 to '123', stores in myString2
+````
+
+### Including expressions in strings
+- By using template literals, **expressions** and **simple variables** can be inserted into variables, showing their results
+
+````
+const song = 'Fight the Youth';
+const score = 9;
+const highestScore = 10;
+const output = `I like the song ${song}. I gave it a score of ${score/highestScore * 100}%.`;
+console.log(output);  // "I like the song Fight the Youth. I gave it a score of 90%."
+````
+### Multiline strings
+- template literals respect **line breaks** in source code. Therefore, you can use them to **span multiple lines**
+
+````
+const output = `I like the song.
+I gave it a score of 90%.`;
+console.log(output);  // I like the song.
+                      // I gave it a score of 90%.
+````
+
+- in regular strings, you would need to use line break characters **\n** in the string
+
+````
+const output = 'I like the song.\nI gave it a score of 90%.'
+console.log(output);  // I like the song.
+                      // I gave it a score of 90%.
+````
