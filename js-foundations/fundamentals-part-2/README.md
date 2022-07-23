@@ -4,6 +4,11 @@ Part 2 goes over:
 1. Strings
 2. Conditionals
 
+Assignments include looking at:
+1. Strings MDN Tutorial
+2. w3schools String Methods
+3. String Methods List
+
 # Strings (mdn web docs)
 
 **Strings** are a piece of text. JS contains many features for:
@@ -52,7 +57,9 @@ console.log(bigmouth);
 ## Concatenating strings
 - Concatenate = join together
 
-done by using:
+done by using:const output = 'I like the song.\nI gave it a score of 90%.';
+console.log(output);  // I like the song.
+                      // I gave it a score of 90%.
 1. **template literal**
 2. **"+" sign**
 ### **template literal:** 
@@ -145,3 +152,66 @@ const output = 'I like the song.\nI gave it a score of 90%.'
 console.log(output);  // I like the song.
                       // I gave it a score of 90%.
 ````
+
+# JS String Methods (w3schools)
+- properties are used by:
+`stringname.property`
+- methods are used by:
+`stringname.method()`
+- strings are **immutable;** they cannot be changed, only replaced. 
+- therefore all string methods **return a new string** 
+
+## String Length Property
+- use `length` property to return length of string
+
+````
+let txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let length = txt.length;
+````
+
+## Extracting String Parts
+3 methods for doing so:
+1. `slice(start, end)`
+2. `substring(start, end)`
+3. `substr(start, length)`
+
+- slice() and substring() are identical. specify start and end length. substring() treats negative values as 0 however
+- JS is 0th-indexed
+- substr() specifies start and length of extracted part instead of end
+
+## Replacing String Content
+- replace(specified, replacer) method replaces specified value in a string with another value 
+
+- does not change string it is called on
+- used to return a new string (declare new string, then assign with replace())
+- replaces **only the first match**
+- case sensitive matching (`/specified/i` insensitive flag = case-insensitive)
+- global match flag /g replaces all matches in string--> `/specified/g` 
+
+## Upper and Lower Case Conversions
+- toUpperCase() and toLowerCase()
+
+## Padding and Trim
+1. trim() method removes whitespace from both sides of string
+2. padStart() and padEnd() add padding to beginning or end of string
+
+## Extracting String Characters
+1. charAt(position) - returns character at specified position in string
+2. charCodeAt(position) - returns Unicode of character at specified position in string
+3. Property Access (with []) - string[position] accessing character at position
+
+Property access:
+- makes strings look like arrays (they arent)
+- [] returns undefined if no char is found, charAt() returns empty string
+- read-only. cannot replace/insert character at specified position
+
+## Converting String --> Array
+- dont using `split()` method.
+- split("delimiter") converts string to array, using character delimiter to split string into different indices
+````
+text.split(",")    // Split on commas
+text.split(" ")    // Split on spaces
+text.split("|")    // Split on pipe
+````
+- not specifying delimiter will mean the returned array will contain the whole string in the first index [0].
+- if delimiter is "", returned array will be array of single characters.
