@@ -215,3 +215,6 @@ text.split("|")    // Split on pipe
 ````
 - not specifying delimiter will mean the returned array will contain the whole string in the first index [0].
 - if delimiter is "", returned array will be array of single characters.
+
+# List of String Methods 
+### Found [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String).
