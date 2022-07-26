@@ -262,3 +262,202 @@ alert( false == 0 ); // true
   - null = 0
   - undefiend = NaN
 
+### null vs 0
+- Because == does not convert null to 0, it will return strange result as seen below
+````
+alert( null > 0 );  // (1) false
+alert( null == 0 ); // (2) false
+alert( null >= 0 ); // (3) true
+````
+
+### undefined comparisons
+- for comparisons other than equality, **undefined converts to NaN**
+- NaN (not a number) returns **false for all comparisons**
+
+# Conditionals (w3 schools)
+1. `if` statements execute code block if condition is true
+2. `else` statements execute code block if all conditions before it are false
+3. `if else` statements execute code block if condition before it is false
+4. `switch` statements are different format to conditionals, useful if there are more than 3 conditions to test for.
+````
+if (time < 10) {
+  greeting = "Good morning";
+} else if (time < 20) {
+  greeting = "Good day";
+} else {
+  greeting = "Good evening";
+}
+````
+
+# Logical Operators (JS fundamentals)
+
+## || (OR)
+- OR manipualtes boolean values only
+- if any of the arguments are `true`, it returns `true`
+- used in conditionals to test if **any** of the given conditions are **true**
+````
+alert( true || true );   // true
+alert( false || true );  // true
+alert( true || false );  // true
+alert( false || false ); // false
+````
+- converts non boolean values to boolean values
+  - 1 = true
+  - 0 = false
+
+### OR "||" finds the first truthy value
+- OR works by:
+  - evaluating from left to right
+  - converts each operand to boolean. if result = `true`, it returns the **original value** of that operand
+  - if all operands have been evaluated (all were false), returns **the last operand**
+
+- Some uses include:
+  1. getting first truthy value from list of variables/expressions
+  ````
+  let firstName = "";
+  let lastName = "";
+  let nickName = "SuperCoder";
+
+  alert( firstName || lastName || nickName || "Anonymous"); // SuperCoder
+  ````
+  2. short-circuit evaluation
+    - OR processes its argument until first truthy value
+    - does not touch other part of argument
+    - can be used with variable assignments / function calls in argument
+    - people use this feature to execuite commands **only** if condition on the left part is falsy
+
+## && (AND)
+- classically, AND returns `true` if **both operands** are truthy
+
+````
+alert( true && true );   // true
+alert( false && true );  // false
+alert( true && false );  // false
+alert( false && false ); // false
+````
+
+### AND "&&" finds first falsy value
+- similar process as OR but instead of returning the first truthy value, it will return the first **falsy** value. 
+- keeps going through each operand until it finds a false one
+- if it goes through all operands, it returns the last one regardless of being false/true
+- AND is higher precedence than OR 
+
+## ! (NOT)
+- accepts a single argument in front of it and does the following:
+  - converts operand to boolean type: true/false
+  - returns the inverse value of conversion
+
+- double NOT `!!` is sometimes used for **value-to-boolean** conversion.
+  - first `!` converts value to boolean and returns inverse
+  - second `!` inverses it again
+
+- ! is **highest** of all precedence of all logical operators
+- ! > && > ||
+
+````
+alert( !true ); // false
+alert( !0 ); // true
+````
+
+## Ternary Operator
+- tests condition and returns one value/exoression if it is true, and another if it is false
+
+````
+( condition ) ? run this code : run this code instead
+
+let greeting = ( isBirthday ) ? 'Happy birthday Mrs. Smith — we hope you have a great day!' : 'Good morning Mrs. Smith.';
+````
+
+### Multiple '?'
+````
+let age = prompt('age?', 18);
+
+let message = (age < 3) ? 'Hi, baby!' :
+  (age < 18) ? 'Hello!' :
+  (age < 100) ? 'Greetings!' :
+  'What an unusual age!';
+
+alert( message );
+````
+````
+let message = (login == 'Employee') ? 'Hello' : (login == 'Director') ? 'Greetings' : (login == '') ? 'No login' : '';
+````
+
+
+# Switch statements
+
+### Example Switch Statement
+````
+switch (expression) {
+	case x:
+		// execute case x code block
+		break;
+	case y:
+		// execute case y code block
+		break;
+	default:
+		// execute default code block
+}
+````
+
+### Switch Ranges
+````
+// Set the student's grade
+const grade = 87;
+
+switch (true) {
+	// If score is 90 or greater
+	case grade >= 90:
+		console.log("A");
+		break;
+	// If score is 80 or greater
+	case grade >= 80:
+		console.log("B");
+		break;
+	// If score is 70 or greater
+	case grade >= 70:
+		console.log("C");
+		break;
+	// If score is 60 or greater
+	case grade >= 60:
+		console.log("D");
+		break;
+	// Anything 59 or below is failing
+	default:
+		console.log("F");
+}
+````
+### Multiple Cases
+````
+// Get number corresponding to the current month, with 0 being January and 11 being December
+const month = new Date().getMonth();
+
+switch (month) {
+	// January, February, March
+	case 0:
+	case 1:
+	case 2:
+		console.log("Winter");
+		break;
+	// April, May, June
+	case 3:
+	case 4:
+	case 5:
+		console.log("Spring");
+		break;
+	// July, August, September
+	case 6:
+	case 7:
+	case 8:
+		console.log("Summer");
+		break;
+	// October, November, December
+	case 9:
+	case 10:
+	case 11:
+		console.log("Autumn");
+		break;
+	default:
+		console.log("Something went wrong.");
+}
+````
