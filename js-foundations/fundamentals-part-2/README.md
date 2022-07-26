@@ -218,3 +218,46 @@ text.split("|")    // Split on pipe
 
 # List of String Methods 
 ### Found [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String).
+
+# Conditionals
+
+# Comparisons
+
+## String Comparison
+
+````
+alert( 'Z' > 'A' ); // true
+alert( 'Glow' > 'Glee' ); // true
+alert( 'Bee' > 'Be' ); // true
+````
+- iterate through strings being compared
+- if letters are same, go to next char
+- if letter is lexographically greater/less, then it is true
+- repeat until end of string
+- strings of same length are equal,
+- otherwise, longer string is greater
+- Unicode Order (a > A because it has a greater index in Unicode internal encoding table)
+
+## Comparison of Different Types
+- JS converts string values to numbers when being compared 
+`alert( '2' > 1 ); // true, string '2' becomes a number 2`
+- true is equal to one while false is equal to 0
+````
+alert( true == 1 ); // true
+alert( false == 0 ); // true
+````
+
+## Strict Equality
+- regular equality check `==` cannot differentiate:
+- - 0 from false 
+- - empty string from false 
+- this happens since **different type operands** are converted to numbers by the equality property.
+- **strict equality** checks equality without type conversion 
+- - if `a` and `b` are **different types**, `===` returns **false** 
+
+## Comparison with null and undefined
+- strict equality returns false since they are **different type**
+- non-strict check shows that they **equal each other** but no any other value
+- null and undefined are converted to numbers for other math comparisons
+- - null = 0
+- - undefiend = NaN
