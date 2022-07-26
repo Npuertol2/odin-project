@@ -57,9 +57,7 @@ console.log(bigmouth);
 ## Concatenating strings
 - Concatenate = join together
 
-done by using:const output = 'I like the song.\nI gave it a score of 90%.';
-console.log(output);  // I like the song.
-                      // I gave it a score of 90%.
+done by using:
 1. **template literal**
 2. **"+" sign**
 ### **template literal:** 
