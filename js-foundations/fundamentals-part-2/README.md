@@ -249,15 +249,16 @@ alert( false == 0 ); // true
 
 ## Strict Equality
 - regular equality check `==` cannot differentiate:
-- - 0 from false 
-- - empty string from false 
+  - 0 from false 
+  - empty string from false 
 - this happens since **different type operands** are converted to numbers by the equality property.
 - **strict equality** checks equality without type conversion 
-- - if `a` and `b` are **different types**, `===` returns **false** 
+  - if `a` and `b` are **different types**, `===` returns **false** 
 
 ## Comparison with null and undefined
 - strict equality returns false since they are **different type**
 - non-strict check shows that they **equal each other** but no any other value
 - null and undefined are converted to numbers for other math comparisons
-- - null = 0
-- - undefiend = NaN
+  - null = 0
+  - undefiend = NaN
+
