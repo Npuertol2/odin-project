@@ -168,3 +168,118 @@ showCount(); // unknown
 
 - a function with **empty return** or without returns **undefined**
 - one function/one action -- functions should do exactly what is suggested by name and no more 
+
+# Function Expressions
+- Function Declaration
+````
+function sayHi() {
+  alert( "Hello" );
+}
+````
+
+- Function Expressions are different from Function Declaration
+
+````
+let sayHi = function() {
+  alert( "Hello" );
+};
+````
+- variable sayHi gets assigned the value of a new function. 
+- *create a function and put it into the variable `sayHi`*
+
+
+## Function is a value
+
+- no matter if we're using expression or declaration, **a function is a value**
+- both store a fucntion in the sayHi variable
+- alert() can be used to print out the value of sayHi variable
+
+````
+function sayHi() {
+  alert( "Hello" );
+}
+
+alert( sayHi ); // shows the function code, NOTE there is no parentheses after sayHi so it does not run the function
+````
+
+### Copying function to another variable
+- we can take sayHi() and copy it to another variable
+````
+function sayHi() {   // (1) create
+  alert( "Hello" );
+}
+
+let func = sayHi;    // (2) copy
+
+func(); // Hello     // (3) run the copy (it works)!
+sayHi(); // Hello    //     this still works too (why wouldn't it)
+````
+- note the lack of parentheses during the assignment of sayHi to func
+
+### Function Expression = semicolon at the end
+- important, since it is not function declaration
+- it is recommended as `function(){}` is inside assignment statement `let sayHi = ...`
+
+## Callback functions
+
+- function used to be *calledback* in another function
+- these are functions that are passed in as parameters or variables in other functions to be used given a certain case
+- example given the function `ask(question, yes, no)`
+
+````
+function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+
+function showOk() {
+  alert( "You agreed." );
+}
+
+function showCancel() {
+  alert( "You canceled the execution." );
+}
+
+// usage: functions showOk, showCancel are passed as arguments to ask
+ask("Do you agree?", showOk, showCancel);
+````
+- if confirm to question is true, pass yes
+- if confirm to question is false, pass no 
+
+### Function expressions in Callback Functions
+- instead of using function declarations to make the `showOk` and `showCancel` functions, we can use expressions directly inside the ask() function
+
+````
+function ask(question, yes, no) {
+  if (confirm(question)) yes()
+  else no();
+}
+
+ask(
+  "Do you agree?",
+  function() { alert("You agreed."); },
+  function() { alert("You canceled the execution."); }
+);
+````
+
+## Function declaration vs Function expression
+
+- Function Declaration: 
+  - declared as separate statement
+  - in main code flow
+````
+// Function Declaration
+function sum(a, b) {
+  return a + b;
+}
+````
+- Function expression:
+  - created inside an expression / another syntax construction
+  - such as right side of assignment expression
+````
+// Function Expression
+let sum = function(a, b) {
+  return a + b;
+};
+````
+
